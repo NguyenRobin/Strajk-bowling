@@ -1,33 +1,29 @@
-# User story 1 - Som användare vill jag kunna boka datum och tid samt ange antal spelare så att jag kan reservera 1 eller flera baner i bowlinghallen.
+## User story 1 - Som användare vill jag kunna boka datum och tid samt ange antal spelare så att jag kan reservera 1 eller flera baner i bowlinghallen.
 
-- Användaren ska kunna välja ett specifikt datum.
-- Användaren ska tydligt se om ett specifikt datum är fullbokat.
-- Användaren ska tydligt se om ett specifikt datum är tillgängligt.
-- Användaren ska inte kunna välja ett redan passerat datum.
+- Användaren ska tydligt se datumet. ✅
+- Användaren ska kunna välja ett specifikt datum. ✅
+- Användaren ska kunna välja vilken tid. ✅
+- Användaren ska kunna ange antalet spelare. ✅
+- Användaren ska kunna välja antalet banor. ✅
+- Användaren ska se datum, tid, spelare och banor.
+- Det ska 3 sections
 
-- Användaren ska välja vilken tid.
-- Användaren ska tydligt se om tiden är tillgänglig eller inte
-- Användaren ska endast kunna fylla i formatet HH:MM
+## User story 2 - Som användare vill jag kunna välja skostorlek för varje spelare så varje spelare får skor som passar.
 
-- Användaren ska kunna ange antalet spelare.
-- Användaren måste minst välja en spelare.
+- Användaren ska ange skostorlek för varje spelare. ✅
+- Användaren ska kunna ändra skostorlek. ✅
+- Användaren ska tydligt se en knapp för att kunna lägga till en skostorlek. ✅
+- När användaren klickar på knappen med en + symbol, ska funktionen "addShoe" anropas. ✅
+- Användaren ska tydligt se en titel med texten 'Shoes'. ✅
+- Titeln med texten "Shoes" ska ha css classen 'shoes_heading'. ✅
 
-- Användaren ska inte kunna boka mer banor än vad som finns tillgängligt.
-
-# User story 2 - Som användare vill jag kunna välja skostorlek för varje spelare så varje spelare får skor som passar.
-
-- Användaren ska tydligt se vilken storlek som tillhör varje spelare.
-- Användaren ska ange skostorlek för varje spelare.
-- Användaren ska kunna välja en skostorlek mellan 22-50.
-- Användaren ska kunna ändra skostorlek.
-- Användaren ska tydligt se en knapp för att kunna lägga till en skostorlek.
-
-# User story 3 - Som användare vill jag kunna ta bort ett fält för skostorlek om jag råkade klicka i ett för mycket så jag inte boka skor i onödan.
+## User story 3 - Som användare vill jag kunna ta bort ett fält för skostorlek om jag råkade klicka i ett för mycket så jag inte boka skor i onödan.
 
 - Användaren ska tydligt se en knapp, som indikerar möjligheten att radera skostorlek.
+- Knappen för att ta bort ett fält ska innehålla ett minus tecken.
 - Användaren ska inte kunna lägga till fler skostorlekar än antalet spelare.
 
-# User story 4 - Som användare vill jag kunna skicka iväg min reservation och få tillbaka ett ett bokningsnummer och totalsumma så jag vet hur mycket jag ska betala. (120 kr / person + 100 kr / bana).
+## User story 4 - Som användare vill jag kunna skicka iväg min reservation och få tillbaka ett ett bokningsnummer och totalsumma så jag vet hur mycket jag ska betala. (120 kr / person + 100 kr / bana).
 
 - Användaren ska ha fyllt i giltigt datum.
 - Användaren ska ha fyllt i giltig tid.
@@ -48,7 +44,7 @@
 - orderbekräftelsen ska tydligt visa bokningsnummer
 - orderbekräftelsen ska tydligt visa totalbeloppet.
 
-# User story 5 - Som användare vill jag kunna navigera mellan boknings-och bekräftelsevyn.
+## User story 5 - Som användare vill jag kunna navigera mellan boknings-och bekräftelsevyn.
 
 - Användaren ska tydligt se en navbar.
 - Användaren ska kunna öppna och stänga modal/popup-fönster genom att klicka på navbaren.
