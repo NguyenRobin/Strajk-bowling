@@ -52,4 +52,27 @@ describe('Test for Shoes component', () => {
     fireEvent.change(shoeInputs[1], { target: { value: '47' } });
     expect(mockUpdateSize).toHaveBeenCalled();
   });
+
+  it('should be a clear button that indicates "delete"', () => {
+    const deleteButton = screen.getAllByRole('button', { name: '-' });
+
+    deleteButton.forEach((button) => {
+      expect(button).toBeInTheDocument();
+      expect(button).toBeVisible();
+    });
+  });
+
+  it('should have a visible "-" symbol as text content in "delete" button', () => {
+    const deleteButton = screen.getAllByRole('button', { name: '-' });
+
+    deleteButton.forEach((button) => {
+      expect(button).toHaveTextContent('-');
+    });
+  });
+
+  it('should trigger the function "removeShoe" when clicked', () => {
+    const deleteButton = screen.getAllByRole('button', { name: '-' });
+    fireEvent.click(deleteButton[0]);
+    expect(mockRemoveShoe).toHaveBeenCalledOnce();
+  });
 });
