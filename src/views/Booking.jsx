@@ -88,7 +88,7 @@ function Booking() {
         people: booking.people,
         shoes: shoes.map((shoe) => shoe.size),
       };
-      console.log(bookingInfo);
+
       const confirmation = await sendBooking(bookingInfo);
       navigate('/confirmation', {
         state: { confirmationDetails: confirmation },

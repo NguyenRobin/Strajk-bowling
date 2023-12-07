@@ -71,10 +71,26 @@ describe('tests for Booking component', () => {
     });
     fireEvent.click(createBookingBtn);
 
+    // NAVIGATE TO /confirmation
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: /Sweet, let's go!/ }));
+      const title = screen.getByText(/see you soon!/i);
+      const date = screen.getByLabelText('When');
+      const playersAmount = screen.getByLabelText('Who');
+      const lanesAmount = screen.getByLabelText('Lanes');
+      const bookingNumber = screen.getByLabelText('Booking number');
+      const totalSum = screen.getByText('460 sek');
 
-      // screen.debug();
+      expect(
+        title,
+        date,
+        playersAmount,
+        lanesAmount,
+        bookingNumber,
+        totalSum
+      ).toBeInTheDocument();
+
+      expect(bookingNumber).toHaveValue('FakeIdTestWithMock1234567');
+      expect(totalSum).toHaveTextContent('460 sek');
     });
   });
 });

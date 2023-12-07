@@ -32,16 +32,15 @@
 - Användaren ska ha fyllt i giltigt antal banor. ✅
 - Användaren ska ha fyllt i giltigt antal skostorlekar ✅
 
-- När användaren klickar på knappen, för att slutföra beställning. Navigeras användaren vidare till url: /confirmation och komponenten <Confirmation/> ska renderas.
+- När användaren klickar på knappen, för att slutföra beställning. Navigeras användaren vidare till url: /confirmation och komponenten <Confirmation/> ska renderas. ✅
 
-- När användaren navigerats till /confirmation, ska det tydligt visas en orderbekräftelse.
+- När användaren navigerats till /confirmation, ska det tydligt visas en orderbekräftelse. ✅
 
-- orderbekräftelsen ska tydligt visa datum.
-- orderbekräftelsen ska tydligt visa tid.
-- orderbekräftelsen ska tydligt visa antalet spelare
-- orderbekräftelsen ska tydligt visa antalet banor
-- orderbekräftelsen ska tydligt visa bokningsnummer
-- orderbekräftelsen ska tydligt visa totalbeloppet.
+- orderbekräftelsen ska tydligt visa tid och datum. ✅
+- orderbekräftelsen ska tydligt visa antalet spelare ✅
+- orderbekräftelsen ska tydligt visa antalet banor ✅
+- orderbekräftelsen ska tydligt visa bokningsnummer ✅
+- orderbekräftelsen ska tydligt visa totalbeloppet. ✅
 
 ## User story 5 - Som användare vill jag kunna navigera mellan boknings-och bekräftelsevyn.
 
