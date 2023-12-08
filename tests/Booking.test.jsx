@@ -22,7 +22,7 @@ describe('tests for Booking component', () => {
     expect(createBookingBtn).toBeVisible();
   });
 
-  it('should be able to send a reservation and receive booking number and total cost', async () => {
+  it('should be able to send a booking request, then be navigated to /confirmation and receive information like booking number and total cost', async () => {
     // ADDING DATE,TIME,AMOUNT PLAYERS,AMOUNT LANES
     const dateInput = screen.getByLabelText('Date');
     const timeInput = screen.getByLabelText('Time');

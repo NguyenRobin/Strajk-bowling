@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, vi } from 'vitest';
 import Shoes from '../src/components/Shoes/Shoes';
 
@@ -32,17 +32,16 @@ describe('Test for Shoes component', () => {
     const button = screen.getByRole('button', { name: '+' });
     expect(button).toBeVisible();
   });
-  it('should call the function "addShoe", when button with plus sign i clicked ', () => {
-    const button = screen.getByRole('button', { name: '+' });
-    fireEvent.click(button);
-    expect(mockAddShoe).toHaveBeenCalled();
-  });
-
   it('should be a input field to enter a size for each player', () => {
     const shoeInputs = screen.getAllByRole('textbox');
     expect(shoeInputs.length).toBe(2);
   });
 
+  it('should call the function "addShoe", when button with plus sign i clicked ', () => {
+    const button = screen.getByRole('button', { name: '+' });
+    fireEvent.click(button);
+    expect(mockAddShoe).toHaveBeenCalled();
+  });
   it('should be possible to change shoe size on each input', () => {
     const shoeInputs = screen.getAllByRole('textbox');
 

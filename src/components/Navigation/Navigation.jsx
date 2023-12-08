@@ -8,8 +8,12 @@ function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <nav className={`navigation ${showMenu ? 'show-menu' : ''}`}>
+    <nav
+      data-testid="modal-test"
+      className={`navigation ${showMenu ? 'show-menu' : ''}`}
+    >
       <img
+        data-testid="navicon-test"
         src={navicon}
         className="navigation__icon"
         onClick={() => {

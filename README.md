@@ -5,16 +5,15 @@
 - Användaren ska kunna välja vilken tid. ✅
 - Användaren ska kunna ange antalet spelare. ✅
 - Användaren ska kunna välja antalet banor. ✅
-- Användaren ska se datum, tid, spelare och banor.
 
 ## User story 2 - Som användare vill jag kunna välja skostorlek för varje spelare så varje spelare får skor som passar.
 
-- Användaren ska ange skostorlek för varje spelare. ✅
-- Användaren ska kunna ändra skostorlek. ✅
-- Användaren ska tydligt se en knapp för att kunna lägga till en skostorlek. ✅
-- När användaren klickar på knappen med en + symbol, ska funktionen "addShoe" anropas. ✅
 - Användaren ska tydligt se en titel med texten 'Shoes'. ✅
 - Titeln med texten "Shoes" ska ha css classen 'shoes_heading'. ✅
+- Användaren ska tydligt se en knapp för att kunna lägga till en skostorlek. ✅
+- Användaren ska kunna ange skostorlek för varje spelare. ✅
+- När användaren klickar på knappen med en + symbol, ska funktionen "addShoe" anropas. ✅
+- Användaren ska kunna ändra skostorlek. ✅
 
 ## User story 3 - Som användare vill jag kunna ta bort ett fält för skostorlek om jag råkade klicka i ett för mycket så jag inte boka skor i onödan.
 
@@ -44,8 +43,10 @@
 
 ## User story 5 - Som användare vill jag kunna navigera mellan boknings-och bekräftelsevyn.
 
-- Användaren ska tydligt se en navbar.
+- Användaren ska tydligt se en symbol som indikerar på navbar. ✅
+- Modal/popup-fönstret ska innehålla två länkar. Booking och Confirmation. ✅
+- När Modal/popup-fönstret är aktivt ska css classen "show-menu" läggas till. ✅
+- När Modal/popup-fönstret är inaktivt ska classen "show-menu" tas bort. ✅
 - Användaren ska kunna öppna och stänga modal/popup-fönster genom att klicka på navbaren.
-- Modal/popup-fönstret ska innehålla två länkar. Booking och Confirmation.
-- När användaren klickar på Booking ska användaren navigeras till url:en / och <Booking /> ska renderas.
-- När användaren klickar på Confirmation ska användaren navigeras till url:en /confirmation och <Confirmation /> ska renderas.
+- När användaren klickar på Booking ska användaren navigeras till url:en / och <Booking /> ska renderas. ✅
+- När användaren klickar på Confirmation ska användaren navigeras till url:en /confirmation och <Confirmation /> ska renderas. ✅

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import BookingInfo from '../src/components/BookingInfo/BookingInfo';
 
 const mockUpdateBookingDetails = vi.fn();
@@ -36,15 +36,6 @@ describe('Test for BookingInfo component', () => {
     expect(timeInput.value).toBe('12:00');
   });
 
-  // it('should validate time format as HH:MM', () => {
-  //   const timeInput = screen.getByLabelText(/time/i);
-  //   expect(timeInput).toBeInTheDocument();
-
-  //   fireEvent.change(timeInput, { target: { value: '09:00' } });
-
-  //   expect(timeInput.value).toBe('12:00');
-  // });
-
   it('should be able to enter a amount of players', async () => {
     const numberOfBowlersInput = screen.getByLabelText(
       /Number of awesome bowlers/i
@@ -52,7 +43,7 @@ describe('Test for BookingInfo component', () => {
 
     fireEvent.change(numberOfBowlersInput, { target: { value: 5 } });
 
-    expect(Number(numberOfBowlersInput.value)).toEqual(5);
+    expect(Number(numberOfBowlersInput.value)).toBe(5);
   });
 
   it('should be able to enter a amount of lanes', async () => {
@@ -60,6 +51,6 @@ describe('Test for BookingInfo component', () => {
 
     fireEvent.change(numberOfBowlersInput, { target: { value: 1 } });
 
-    expect(Number(numberOfBowlersInput.value)).toEqual(1);
+    expect(Number(numberOfBowlersInput.value)).toBe(1);
   });
 });
