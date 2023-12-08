@@ -53,6 +53,5 @@
 
 ## User story 6 - Som användare vill jag få tydliga error meddelande om jag glömt att fylla i uppgifter vid försök av att skapande beställning.
 
-- Användaren ska få upp ett felmeddelandde om uppgifter saknas ✅
-- Om antalet spelare och antalet skor inte är samma ska error meddelade visas. ✅
--
+- Användaren ska få upp ett felmeddelandde om uppgifter saknas.
+- Om antalet spelare och antalet skor inte är samma ska error meddelade visas.
