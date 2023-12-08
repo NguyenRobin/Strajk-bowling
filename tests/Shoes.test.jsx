@@ -5,7 +5,10 @@ import Shoes from '../src/components/Shoes/Shoes';
 const mockUpdateSize = vi.fn();
 const mockAddShoe = vi.fn();
 const mockRemoveShoe = vi.fn();
-const mockShoes = ['42', '43'];
+const mockShoes = [
+  { id: 'mockid1', size: '42' },
+  { id: 'mockid2', size: '43' },
+];
 
 describe('Test for Shoes component', () => {
   beforeEach(() => {
