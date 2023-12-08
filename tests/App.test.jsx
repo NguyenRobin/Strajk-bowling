@@ -7,26 +7,6 @@ describe('Tests for App', () => {
     render(<App />);
   });
 
-  it('should be possible to delete a shoe size field', async () => {
-    const addShoeSizeBtn = screen.getByRole('button', { name: '+' });
-
-    fireEvent.click(addShoeSizeBtn);
-    fireEvent.click(addShoeSizeBtn);
-
-    const totalArrayOfShoeSizes = screen.getAllByTestId('shoes-data');
-    const removeShoeSizeBtn = screen.getAllByRole('button', { name: '-' });
-
-    expect(screen.getByText('Shoe size / person 1')).toBeInTheDocument();
-    expect(screen.getByText('Shoe size / person 2')).toBeInTheDocument();
-    expect(totalArrayOfShoeSizes.length).toBe(2);
-
-    fireEvent.click(removeShoeSizeBtn[1]);
-
-    // DELETING ONE FROM DOCUMENT
-    expect(screen.queryByText('Shoe size / person 2')).not.toBeInTheDocument();
-    screen.debug();
-  });
-
   it('Should be possible to navigate between <Booking/> and <Confirmation/>', async () => {
     const navImg = screen.getByTestId('navicon-test');
     const bookingLink = screen.getByRole('link', { name: 'Booking' });

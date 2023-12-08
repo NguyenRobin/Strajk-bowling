@@ -21,6 +21,23 @@ describe('tests for Booking component', () => {
     expect(createBookingBtn).toBeInTheDocument();
     expect(createBookingBtn).toBeVisible();
   });
+  it('should be possible to delete a shoe size field', async () => {
+    const addShoeSizeBtn = screen.getByRole('button', { name: '+' });
+
+    fireEvent.click(addShoeSizeBtn);
+    fireEvent.click(addShoeSizeBtn);
+
+    const totalArrayOfShoeSizes = screen.getAllByTestId('shoes-data');
+    const removeShoeSizeBtn = screen.getAllByRole('button', { name: '-' });
+
+    expect(screen.getByText('Shoe size / person 1')).toBeInTheDocument();
+    expect(screen.getByText('Shoe size / person 2')).toBeInTheDocument();
+    expect(totalArrayOfShoeSizes.length).toBe(2);
+
+    // DELETING ONE FROM DOCUMENT
+    fireEvent.click(removeShoeSizeBtn[1]);
+    expect(screen.queryByText('Shoe size / person 2')).not.toBeInTheDocument();
+  });
 
   it('should be able to send a booking request, then be navigated to /confirmation and receive information like booking number and total cost', async () => {
     // ADDING DATE,TIME,AMOUNT PLAYERS,AMOUNT LANES
@@ -63,7 +80,7 @@ describe('tests for Booking component', () => {
 
     // AMOUNT OF SHOES IS EQUAL TO AMOUNT OF PLAYERS
     const arrOfShoes = screen.getAllByTestId('shoes-data');
-    expect(arrOfShoes.length).toBe(Number(playersInput.value));
+    expect(arrOfShoes).toHaveLength(playersInput.value);
 
     // CREATE BOOKING BUTTON (send request to with mock)
     const createBookingBtn = screen.getByRole('button', {
@@ -92,5 +109,56 @@ describe('tests for Booking component', () => {
       expect(bookingNumber).toHaveValue('FakeIdTestWithMock1234567');
       expect(totalSum).toHaveTextContent('460 sek');
     });
+  });
+
+  it('should display error message if all fields is not filled', async () => {
+    const createBookingBtn = screen.getByRole('button', {
+      name: /strIIIIIike!/i,
+    });
+
+    fireEvent.click(createBookingBtn);
+
+    await waitFor(() => {
+      expect(
+        screen.getByText(
+          /Fill out all the fields and make sure that people and shoes is the same number./i
+        )
+      ).toBeInTheDocument();
+    });
+  });
+
+  it('should show error message if amount of shoes sizes is not equal to amount of players', async () => {
+    const dateInput = screen.getByLabelText('Date');
+    const timeInput = screen.getByLabelText('Time');
+    const playersInput = screen.getByLabelText('Number of awesome bowlers');
+    const lanesInput = screen.getByLabelText('Number of lanes');
+
+    fireEvent.change(dateInput, { target: { value: '2023-12-24' } });
+    fireEvent.change(timeInput, { target: { value: '09:00' } });
+    fireEvent.change(playersInput, { target: { value: 3 } });
+    fireEvent.change(lanesInput, { target: { value: 1 } });
+
+    const addShoeSizeBtn = screen.getByRole('button', { name: '+' });
+
+    fireEvent.click(addShoeSizeBtn);
+    fireEvent.click(addShoeSizeBtn);
+    fireEvent.click(addShoeSizeBtn);
+    fireEvent.click(addShoeSizeBtn);
+    fireEvent.click(addShoeSizeBtn);
+
+    const createBookingBtn = screen.getByRole('button', {
+      name: /strIIIIIike!/i,
+    });
+
+    fireEvent.click(createBookingBtn);
+
+    const arrOfShoes = screen.getAllByTestId('shoes-data');
+    expect(arrOfShoes).toHaveLength(5);
+    expect(playersInput).toHaveValue(3);
+    expect(
+      screen.getByText(
+        /Fill out all the fields and make sure that people and shoes is the same number./i
+      )
+    ).toBeInTheDocument();
   });
 });
